@@ -1,0 +1,78 @@
+%div#wrapper
+  -# %iframe#vr-iframe.background{:allowfullscreen => "", :style => "display: none;",
+    :frameborder => "0", :height => "100%", :width => "100%",
+    :src => "//storage.googleapis.com/vrview/index.html?image=//storage.googleapis.com/vrview/examples/coral.jpg&is_stereo=true"}
+    #background-cover
+  %section.center
+    %span
+      Oh, hello there! :)
+  %p
+    Here are some links to other VR things I've done:
+    %ul.vr_list
+      %li
+        %a.link{:href=>"http://andrescuervo.github.io/vrview/?image=images/oberlin/tappan/tappan1.1.jpg"}
+          Oberlin College's Tappan Square
+      %li
+        %a{:href=>"http://andrescuervo.github.io/vrview/?image=images/images/sage_and_christy_show_11_2_16.jpg"}
+          A spooky installation from 11/02/16:
+        a collaboration by Christiana Rose and Sage Jenson.
+      %li
+        %a{:href=>"http://andrescuervo.github.io/vrview/?image=images/images/getty_sunny.jpg"}
+          A sunny day
+        at the Getty museum.
+      %li
+        %a{:href=>"http://andrescuervo.github.io/vrview/?image=images/images/roof_blurry.jpg"}
+          A really blurry VR experience from a roof.
+        I'll get a better picture ... someday ¯\_(ツ)_/¯.
+      %li
+        %a{:href=>"http://andrescuervo.github.io/vrview/?image=images/sf_party_house.jpg"}
+          Some house in San Francisco
+
+%div#container
+
+%script{:src => "http://threejs.org/build/three.js"}
+%script{:src => "http://threejs.org/examples/js/controls/DeviceOrientationControls.js"}
+:javascript
+  // Lol, replace ALL of this with VR controls, probably Reticulum(?) or just its dependencies, to get the dragging desktop feeeeel
+  (function() {
+    "use strict";
+    window.addEventListener('load', function() {
+      var container, camera, scene, renderer, controls, geometry, mesh;
+      var animate = function(){
+        window.requestAnimationFrame( animate );
+        controls.enableManualDrag = true;
+        controls.update();
+        renderer.render(scene, camera);
+      };
+      container = document.getElementById( 'container' );
+      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1100);
+      controls = new THREE.DeviceOrientationControls( camera );
+      controls.connect();
+      console.log(controls);
+      console.log(controls.enableManualDrag);
+      controls.enableManualDrag = true;
+      scene = new THREE.Scene();
+      var geometry = new THREE.SphereGeometry( 500, 16, 8 );
+      geometry.scale( - 1, 1, 1 );
+      var material = new THREE.MeshBasicMaterial( {
+        map: new THREE.TextureLoader().load( 'http://threejs.org/examples/textures/2294472375_24a3b8ef46_o.jpg' )
+      } );
+      var mesh = new THREE.Mesh( geometry, material );
+      scene.add( mesh );
+      var geometry = new THREE.BoxGeometry( 100, 100, 100, 4, 4, 4 );
+      var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
+      var mesh = new THREE.Mesh( geometry, material );
+      scene.add( mesh );
+      renderer = new THREE.WebGLRenderer();
+      renderer.setPixelRatio( window.devicePixelRatio );
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      container.appendChild(renderer.domElement);
+      window.addEventListener('resize', function() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+      }, false);
+      animate();
+    }, false);
+  })();
+

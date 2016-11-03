@@ -1,0 +1,162 @@
+@charset "utf-8";
+
+@import "vrview";
+
+body {
+    text-align: center;
+    font-family: sans-serif;
+    overflow-y: scroll;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 32px;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+    background: url("../images/middleman.png") no-repeat center 100px;
+    padding: 350px 0 10px;
+margin: 0; }
+
+.doc {
+    font-size: 14px;
+margin: 0; }
+.doc:before,
+.doc:after {
+    opacity: .2;
+    padding: 6px;
+    font-style: normal;
+    position: relative;
+content: "•"; }
+.doc a {
+color: rgba(0, 0, 0, 0.3); }
+.doc a:hover {
+color: #666; }
+
+.welcome {
+    -webkit-animation-name: welcome;
+-webkit-animation-duration: .9s; }
+
+@-webkit-keyframes welcome {
+    from {
+        -webkit-transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        -webkit-transform: scale(0);
+        opacity: 0;
+    }
+    82.5% {
+        -webkit-transform: scale(1.03);
+        -webkit-animation-timing-function: ease-out;
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: scale(1);
+    }
+}
+
+// Target generated canvas element because it doesn't have a default id :/
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+#vr-iframe {
+    display: none;
+    @at-root &.background, #background-cover {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        // height: 100%;
+    }
+}
+
+#background-cover {
+    // background-color: rgba(0, 0, 0, 0.05);
+    pointer-events: none;
+}
+
+#wrapper {
+    color: #DDD;
+    position: absolute;
+    font-size: 58pt;
+    top: 0;
+    z-index: 1;
+    background-color: rgba(1,1,1,0.51);
+    // overflow-y: scroll;
+
+    position: fixed;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+}
+
+section {
+    // background-color: rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    display: inline-block;
+}
+
+.center {
+    text-align: center;
+}
+
+@media (min-width: 500px) {
+    #wrapper {
+        font-size: 16pt;
+        // $side-margins: 15%;
+        // margin-left: $side-margins;
+        // margin-right: $side-margins;
+    }
+
+    section {
+        max-width: 50%;
+    }
+}
+
+#container {
+    position: fixed;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.vr_list {
+    color: white;
+    font-size: 2em;
+    padding: 2.5em 2em;
+    li {
+        margin-bottom: 10vh;
+        list-style: none;
+        padding-bottom: 1.2em;
+        border-bottom: 2px dotted #F8F8F8;
+    }
+
+    a {
+        color: #2EAFAC;
+        text-decoration: none;
+        border-bottom: 3px solid #2EAFAC;
+
+        &::before, &::after {
+            display: inline;
+            color: blue;
+
+        }
+        &::before {
+            content: '\26D3 [';
+        }
+        &::after {
+            content: ' ]';
+        }
+    }
+}
