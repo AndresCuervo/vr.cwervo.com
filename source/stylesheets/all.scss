@@ -84,7 +84,7 @@ body {
 #wrapper {
     color: #DDD;
     position: absolute;
-    font-size: 58pt;
+    font-size: 18pt;
     top: 0;
     z-index: 1;
     background-color: rgba(1,1,1,0.51);
@@ -111,7 +111,7 @@ section {
 
 @media (min-width: 500px) {
     #wrapper {
-        font-size: 16pt;
+        font-size: 20pt;
         // $side-margins: 15%;
         // margin-left: $side-margins;
         // margin-right: $side-margins;
@@ -133,8 +133,10 @@ section {
 
 .vr_list {
     color: white;
-    font-size: 2em;
-    padding: 2.5em 2em;
+    // font-size: 2vw;
+    // padding-top: 2.5em;
+    // padding-bottom: 2.5em;
+    padding: 0;
     li {
         margin-bottom: 10vh;
         list-style: none;
