@@ -122,53 +122,6 @@
     </i>
   </p>
 </div>
-<div id='container'></div>
-<script src='http://threejs.org/build/three.js'></script>
-<script src='http://threejs.org/examples/js/controls/DeviceOrientationControls.js'></script>
-<script>
-  // Lol, replace ALL of this with VR controls, probably Reticulum(?) or just its dependencies, to get the dragging desktop feeeeel
-  (function() {
-    "use strict";
-    window.addEventListener('load', function() {
-      var container, camera, scene, renderer, controls, geometry, mesh;
-      var animate = function(){
-        window.requestAnimationFrame( animate );
-        controls.enableManualDrag = true;
-        controls.update();
-        renderer.render(scene, camera);
-      };
-      container = document.getElementById( 'container' );
-      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1100);
-      controls = new THREE.DeviceOrientationControls( camera );
-      controls.connect();
-      console.log(controls);
-      console.log(controls.enableManualDrag);
-      controls.enableManualDrag = true;
-      scene = new THREE.Scene();
-      var geometry = new THREE.SphereGeometry( 500, 16, 8 );
-      geometry.scale( - 1, 1, 1 );
-      var material = new THREE.MeshBasicMaterial( {
-        map: new THREE.TextureLoader().load( 'http://threejs.org/examples/textures/2294472375_24a3b8ef46_o.jpg' )
-      } );
-      var mesh = new THREE.Mesh( geometry, material );
-      scene.add( mesh );
-      var geometry = new THREE.BoxGeometry( 100, 100, 100, 4, 4, 4 );
-      var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
-      var mesh = new THREE.Mesh( geometry, material );
-      scene.add( mesh );
-      renderer = new THREE.WebGLRenderer();
-      renderer.setPixelRatio( window.devicePixelRatio );
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      container.appendChild(renderer.domElement);
-      window.addEventListener('resize', function() {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize( window.innerWidth, window.innerHeight );
-      }, false);
-      animate();
-    }, false);
-  })();
-</script>
 
   </body>
 </html>
