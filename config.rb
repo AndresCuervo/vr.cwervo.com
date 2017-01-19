@@ -71,6 +71,7 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
+#
 # Deploy configuration
 activate :deploy do |deploy|
     # Git Deploy Method
