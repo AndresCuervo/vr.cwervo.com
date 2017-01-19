@@ -47,10 +47,10 @@
 #   end
 # end
 
+set :site_url, ""
+
 set :css_dir, 'stylesheets'
-
 set :js_dir, 'javascripts'
-
 set :images_dir, 'images'
 
 # Build-specific configuration
@@ -69,9 +69,14 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+
+  # Take from:
+  # https://forum.middlemanapp.com/t/trouble-with-link-to-and-relative-links-for-gh-pages/1864/2
+  # Relative assets needed to deploy to Github Pages
+  activate :relative_assets
+  set :site_url, "/repo-name"
 end
 
-#
 # Deploy configuration
 activate :deploy do |deploy|
     # Git Deploy Method
