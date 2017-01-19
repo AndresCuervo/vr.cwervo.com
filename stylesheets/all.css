@@ -1,0 +1,246 @@
+@charset "UTF-8";
+/* line 1, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/_vrview.scss */
+html, body {
+  margin: 0px;
+  padding: 0px;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+/* line 12, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/_vrview.scss */
+.dialog {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 170%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none; }
+
+/* line 26, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/_vrview.scss */
+.dialog.visible {
+  display: flex; }
+
+/* line 29, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/_vrview.scss */
+.dialog .wrap {
+  padding: 30px 60px;
+  margin: 20px auto;
+  width: 60%;
+  border-radius: 5px; }
+
+/* line 36, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/_vrview.scss */
+.dialog h1 {
+  margin: 0; }
+
+/* line 40, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/_vrview.scss */
+a, a:visited {
+  color: skyblue; }
+
+/* line 44, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/_vrview.scss */
+#title {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  font-size: 3em;
+  font-family: 'Dosis';
+  opacity: 1;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  margin: 0 0.5rem; }
+
+/* line 60, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/_vrview.scss */
+#title.hidden {
+  opacity: 0; }
+
+/* line 64, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/_vrview.scss */
+#watermark img {
+  position: fixed;
+  overflow: hidden;
+  left: 0;
+  bottom: 0;
+  opacity: 0.3;
+  width: 24px;
+  height: 24px;
+  padding: 12px; }
+
+/* line 74, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/_vrview.scss */
+#watermark img:hover {
+  opacity: 1;
+  -webkit-filter: drop-shadow(white 0 0 5px); }
+
+/* line 80, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/_vrview.scss */
+canvas {
+  cursor: -webkit-grab; }
+
+/* line 83, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/_vrview.scss */
+canvas:active {
+  cursor: -webkit-grabbing; }
+
+/* line 5, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+body {
+  text-align: center;
+  font-family: sans-serif;
+  overflow-y: scroll; }
+
+/* line 11, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+h1 {
+  font-weight: bold;
+  font-size: 32px;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  background: url("../images/middleman.png") no-repeat center 100px;
+  padding: 350px 0 10px;
+  margin: 0; }
+
+/* line 21, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+.doc {
+  font-size: 14px;
+  margin: 0; }
+
+/* line 24, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+.doc:before,
+.doc:after {
+  opacity: .2;
+  padding: 6px;
+  font-style: normal;
+  position: relative;
+  content: "•"; }
+
+/* line 31, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+.doc a {
+  color: rgba(0, 0, 0, 0.3); }
+
+/* line 33, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+.doc a:hover {
+  color: #666; }
+
+/* line 36, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+.welcome {
+  -webkit-animation-name: welcome;
+  -webkit-animation-duration: .9s; }
+
+@-webkit-keyframes welcome {
+  from {
+    -webkit-transform: scale(0);
+    opacity: 0; }
+  50% {
+    -webkit-transform: scale(0);
+    opacity: 0; }
+  82.5% {
+    -webkit-transform: scale(1.03);
+    -webkit-animation-timing-function: ease-out;
+    opacity: 1; }
+  to {
+    -webkit-transform: scale(1); } }
+/* line 60, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0; }
+
+/* line 66, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+#vr-iframe {
+  display: none; }
+  /* line 68, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+  #vr-iframe.background, #background-cover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0; }
+
+/* line 79, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+#background-cover {
+  pointer-events: none; }
+
+/* line 84, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+#wrapper {
+  color: #DDD;
+  position: absolute;
+  font-size: 18pt;
+  top: 0;
+  z-index: 1;
+  background-color: rgba(1, 1, 1, 0.51);
+  position: fixed;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-y: scroll; }
+
+/* line 102, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+section {
+  max-width: 90%;
+  display: inline-block; }
+
+/* line 108, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+.center {
+  text-align: center; }
+
+@media (min-width: 500px) {
+  /* line 113, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+  #wrapper {
+    font-size: 20pt;
+    margin: 1.25em; }
+
+  /* line 121, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+  section {
+    max-width: 50%; } }
+/* line 126, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+#container {
+  position: fixed;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+/* line 135, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+.vr_list {
+  color: white;
+  padding: 0; }
+  /* line 141, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+  .vr_list li {
+    margin-bottom: 10vh;
+    list-style: none;
+    padding-bottom: 1.2em;
+    border-bottom: 2px dotted #F8F8F8; }
+  /* line 148, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+  .vr_list a {
+    color: #2EAFAC;
+    text-decoration: none;
+    border-bottom: 3px solid #2EAFAC; }
+    /* line 153, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+    .vr_list a::before, .vr_list a::after {
+      display: inline;
+      color: blue; }
+    /* line 158, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+    .vr_list a::before {
+      content: '\26D3 ['; }
+    /* line 161, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+    .vr_list a::after {
+      content: ' ]'; }
+
+/* line 168, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+.source-link {
+  margin-top: 1em;
+  font-size: 0.65em;
+  color: #999; }
+  /* line 173, /Users/tiny/code/play/vr.cwervo.com/source/stylesheets/all.scss */
+  .source-link a {
+    color: #ddd; }
