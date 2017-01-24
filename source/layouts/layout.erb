@@ -9,9 +9,9 @@
 
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= (current_page.data.title || "vr.cwervo.com !")  %></title>
-    <meta property="og:url"                content="http://cwervo.com" />
+    <meta property="og:url"                content="<%= "http://vr.cwervo.com" + current_page.url%>" />
     <meta property="og:type"               content="article" />
-    <meta property="og:title"              content="VR . CWERVO . COM" />
+    <meta property="og:title"              content="<%= (current_page.data.title || "VR . CWERVO . COM")%>"/>
     <meta property="og:description"        content="A collection of VR experiences." />
     <meta property="og:image"              content="/images/big-logo.png" />
 
