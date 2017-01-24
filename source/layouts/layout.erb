@@ -8,7 +8,7 @@
     <meta name="viewport" content="initial-scale=1">
 
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title>vr.cwervo.com !</title>
+    <title><%= (current_page.data.title || "vr.cwervo.com !")  %></title>
     <meta property="og:url"                content="http://cwervo.com" />
     <meta property="og:type"               content="article" />
     <meta property="og:title"              content="VR . CWERVO . COM" />
@@ -18,7 +18,8 @@
 <meta property="og:site_name" content="vr.cwervo.com">
 
     <%= stylesheet_link_tag "normalize", "all" %>
-    <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+    <!-- <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script> -->
+    <!-- ↓ this includes aframe-0.4.0, so we're good :)-->
     <%= javascript_include_tag  "all" %>
   </head>
 
