@@ -9,16 +9,17 @@
 
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>vr.cwervo.com !</title>
-    <meta property="og:url"                content="http://cwervo.com" />
+    <meta property="og:url"                content="http://vr.cwervo.com/" />
     <meta property="og:type"               content="article" />
-    <meta property="og:title"              content="VR . CWERVO . COM" />
+    <meta property="og:title"              content="VR . CWERVO . COM"/>
     <meta property="og:description"        content="A collection of VR experiences." />
     <meta property="og:image"              content="/images/big-logo.png" />
 
 <meta property="og:site_name" content="vr.cwervo.com">
 
     <link href="stylesheets/normalize.css" rel="stylesheet" type="text/css" /><link href="stylesheets/all.css" rel="stylesheet" type="text/css" />
-    <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+    <!-- <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script> -->
+    <!-- ↓ this includes aframe-0.4.0, so we're good :)-->
     <script src="javascripts/all.js" type="text/javascript"></script>
   </head>
 
@@ -32,6 +33,22 @@
   <p>
     Here are some links to other VR things I've done:
     <ul class='vr_list'>
+      <li>
+        <a href='panoramas/sf-moma/the-statue/'>
+          The statue at the middle of the SF MOMA lobby,
+          <i>
+            Sequence
+          </i>
+          by Richard Serra.
+        </a>
+        (01/22/17)
+      </li>
+      <li>
+        <a href='/panoramas/womens-march/'>
+          Women's March SF
+        </a>
+        (01/21/17)
+      </li>
       <li>
         <a href='http://andrescuervo.github.io/vrview/?image=images/2017/january8and9/staircase-illusion.jpg'>
           A staircase illusion
@@ -114,17 +131,9 @@
       </li>
     </ul>
   </p>
-  <p>
-    <i>
-      Note: the background of this page is borrowed from
-      <a href='https://threejs.org/examples/misc_controls_deviceorientation.html'>
-        this Three.js demo
-      </a>
-    </i>
-  </p>
 </div>
 <a-scene>
-  <a-sky src="https://threejs.org/examples/textures/2294472375_24a3b8ef46_o.jpg"></a-sky>
+  <a-sky src="/images/panoramas/abandoned-room.jpg"></a-sky>
 </a-scene>
 
   </body>
