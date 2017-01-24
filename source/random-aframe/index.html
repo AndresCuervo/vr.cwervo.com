@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <title>My A-Frame Scene</title>
+        <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+
+        <script src="https://rawgit.com/ngokevin/aframe-animation-component/master/dist/aframe-animation-component.min.js"></script>
+        <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
+        <script src="//rawgit.com/donmccurdy/aframe-extras/v3.2.2/dist/aframe-extras.min.js"></script>
+
+        <!-- Working with .ply models -->
+        <script src="https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"></script>
+    </head>
+    <body>
+        <style>
+            div {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                color: green;
+            }
+        </style>
+        <script>
+            AFRAME.registerComponent('change-color-on-click', {
+                init: function () {
+                    var COLORS = ['red', 'green', 'blue'];
+                    this.el.addEventListener('click', function (evt) {
+                        var randomIndex = Math.floor(Math.random() * COLORS.length);
+                        this.setAttribute('material', 'color', COLORS[randomIndex]);
+                        console.log('I was clicked at: ', evt.detail.intersection.point);
+                    });
+                }
+            });
+        </script>
+        <a-scene>
+            <a-assets>
+                <img id="boxTexture" src="/images/cube-rocky-texture.jpg">
+                <img id="skyTexture" src="/images/sechelt.jpg">
+                <img id="groundTexture" src="/images/floor.jpg">
+
+                <a-asset-item id="myModelObj" src="soccer-ball/mesh.obj"></a-asset-item>
+                <a-asset-item id="myModelMtl" src="soccer-ball/mesh.mtl"></a-asset-item>
+
+                <a-asset-item id="bustFelixMesh" src="bust-felix/mesh.obj"></a-asset-item>
+                <a-asset-item id="bustFelixMtl" src="bust-felix/mesh.mtl"></a-asset-item>
+                <a-asset-item id="firstCubeThingyPly" src="assets/first-cube-thingy.ply"></a-asset-item>
+            </a-assets>
+                <!-- pauseEvents: mouseleave; -->
+            <a-box src="#boxTexture" position="0 2 -5" rotation="0 45 45" scale="2 2 2"
+                animation__bounce="property: position; dir: alternate; dur: 1000;
+                easing: easeInSine; loop: true; to: 0 2.2 -5"
+                animation__grow="property: scale; to: 2.3 2.3 2.3; dur: 600;
+                easing: easeInOutCirc;
+                startEvents: mouseenter;"
+                animation__shrink="property: scale; from: 2.3 2.3 2.3;
+                to: 2 2 2; dur: 600;
+                easing: easeInOutCirc;
+                startEvents: mouseleave;"
+                animation__rotate="property: rotation; dur: 2000;
+                startEvents: click; to: 360 405 45;">
+                <!-- <!&#45;&#45; Write a little webapp to translate a&#45;animation to animation__whatever&#45;&#45;> -->
+
+                    <!-- <a&#45;sound src="https://freesound.org/data/previews/174/174450_746632&#45;lq.mp3" autoplay="true"> -->
+                    <!-- </a&#45;sound> -->
+            </a-box>
+
+            <a-entity ply-model="src: #firstCubeThingyPly" rotation="-90 0 0"
+                position="-2 1.5 -2"
+                scale="0.025 0.025 0.025"
+                animation__rotate="property: rotation;
+                dur: 3000;
+                dir: alternate;
+                loop: true;
+                to: 0 360 40"></a-entity>
+
+            <a-entity bmfont-text="text: Hello, A-Frame! Semi-colon? \;; color: #BBB"
+                position="-0.9 0.2 -3"
+                scale="2 2 2"
+                >
+                <!-- rotation="0 90 0" -->
+
+                <!-- animation__rotate&#45;text="property: rotation; -->
+                <!-- loop: true; -->
+                <!-- dir: alternate; -->
+                <!-- to: 10 360 0; -->
+                <!-- dur: 3000;" -->
+            </a-entity>
+
+            <a-sky src="#skyTexture"></a-sky>
+
+            <a-light type="ambient" color="#000"></a-light>
+            <a-light type="point" intensity="2" position="2 4 4"></a-light>
+
+            <a-entity
+                position="4 2 -5"
+                scale="0.1 0.1 0.1"
+                rotation="-90 0 0"
+                animation__rotate="property: rotation;
+                loop: true;
+                dir: alternate;
+                dur: 3000;
+                to: -45 90 40;"
+                obj-model="obj: #myModelObj; mtl: #myModelMtl"></a-entity>
+
+            <!-- <a&#45;entity -->
+            <!--     position="&#45;3 2 0" -->
+            <!--     scale="0.005 0.005 0.005" -->
+            <!--     rotation="&#45;90 0 180" -->
+            <!--     obj&#45;model="obj: #bustFelixMesh; mtl: #bustFelixMtl"></a&#45;entity> -->
+
+            <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30"
+                repeat="10 10"></a-plane>
+            <a-camera>
+                    <!-- position="0 0 &#45;1" -->
+                <a-cursor
+                    scale="2 2 2"
+                    geometry="primitive: ring"
+                    material="color: #FFC0CB; shader: flat"
+                    animation__scale="property: scale;
+                    dur: 300;
+                    from: 2.5 2.5 2.5;
+                    to: 2 2 2;
+                    startEvents: click;"
+                    animation__color="property: material.color;
+                    dur: 600;
+                    from: #3A3;
+                    to: #FFC0CB;
+                    startEvents: click;"
+                    >
+                    <!-- animation__change_cursor_color_on_click="startEvents: click; -->
+                    <!-- property: color; -->
+                    <!-- to: material.color;" -->
+                </a-cursor>
+            </a-camera>
+        </a-scene>
+    </body>
+</html>
