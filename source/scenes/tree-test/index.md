@@ -33,6 +33,20 @@ title: Example Tree!
     </a-assets>
   <a-sky src="/images/panoramas/sf-moma-01-2017/moma-lobby-sculpture.jpg" rotation="0 -130 0"></a-sky>
 
+  <a-entity mixin="red cube" position="-3 2 -3"
+  rotation="45 0 0"></a-entity>
+
+ <a-entity geometry="primitive: circle; radius: 10; segments: 30" material="color: #F79F24"
+  position="0 15 -12"
+  rotation="25 0 10"
+  animation__segs="property: geometry.segments;
+  loop: true;
+  easing: linear;
+  from: 30; to: 3;
+  dir: alternate;
+  dur: 3000;"
+  ></a-entity>
+
   <!-- <a-entity mixin="baseTree" position="-3 2 -3"></a-entity> -->
   <!-- <a-entity mixin="baseTree spinTree360" position="0 1.5 -3" -->
   <!-- animation__up-and-down="property: position; dur: 1500; loop: true; easing: linear; -->
@@ -41,7 +55,8 @@ title: Example Tree!
   <!-- to: 0 3 -3;"></a-entity> -->
   <!-- <a-entity mixin="baseTree"></a-entity> -->
 
-  <a-entity entity-generator="mixin: baseTree; num: 50;"></a-entity>
+  <!-- <a-entity entity-generator="mixin: baseTree; num: 50;"></a-entity> -->
+  <a-entity entity-generator="mixin: baseTree; num: 20;"></a-entity>
 
   <a-camera>
     <a-cursor
