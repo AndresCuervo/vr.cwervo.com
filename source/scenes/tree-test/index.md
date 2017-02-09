@@ -10,7 +10,7 @@ title: Example Tree!
 <script src="https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"></script>
 <!-- Entity generator -->
 <script src="https://unpkg.com/aframe-entity-generator-component@^3.0.0/dist/aframe-entity-generator-component.min.js"></script>
- <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
+<script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
 
 <a-scene>
     <a-assets>
@@ -18,6 +18,8 @@ title: Example Tree!
         <a-mixin id="red" material="color: red"></a-mixin>
         <a-mixin id="blue" material="color: blue"></a-mixin>
         <a-mixin id="cube" geometry="primitive: box"></a-mixin>
+        <img id="lime-green-picture" src="/images/textures/watercolor/lime-green-square.png">
+        <a-mixin id="limeCube" geometry="primitive: box" material="src: #lime-green-picture"></a-mixin>
         <a-mixin id="candle" geometry="primitive: sphere" light></a-mixin>
         <a-mixin id="baseTree" ply-model="src: #treePly" rotation="-90 0 0"
         random-spherical-position="radius: 4; startY: 95;"
@@ -31,14 +33,26 @@ title: Example Tree!
         from: -90 0 0;
         to: -90 360 0"></a-mixin>
     </a-assets>
-  <a-sky src="/images/panoramas/sf-moma-01-2017/moma-lobby-sculpture.jpg" rotation="0 -130 0"></a-sky>
+    <!-- Eventaully replace this, maybe with a photo of the Arb? THE ARB getting glitchier  and glitcher, ooooh! -->
+  <a-sky src="https://image.shutterstock.com/z/stock-photo--degree-forest-panorama-107308361.jpg" rotation="0 -130 0"></a-sky>
 
-  <a-entity mixin="red cube" position="-3 2 -3"
+  <a-entity mixin="cube limeCube" position="-3 2 -3"
   rotation="45 0 0"></a-entity>
 
  <a-entity geometry="primitive: circle; radius: 10; segments: 30" material="color: #F79F24"
   position="0 15 -12"
   rotation="25 0 10"
+  animation__segs="property: geometry.segments;
+  loop: true;
+  easing: linear;
+  from: 30; to: 3;
+  dir: alternate;
+  dur: 3000;"
+  ></a-entity>
+
+ <a-entity geometry="primitive: circle; radius: 10; segments: 30" material="color: #F79F24"
+  position="0 15 -12"
+  rotation="25 15 15"
   animation__segs="property: geometry.segments;
   loop: true;
   easing: linear;
@@ -56,7 +70,7 @@ title: Example Tree!
   <!-- <a-entity mixin="baseTree"></a-entity> -->
 
   <!-- <a-entity entity-generator="mixin: baseTree; num: 50;"></a-entity> -->
-  <a-entity entity-generator="mixin: baseTree; num: 20;"></a-entity>
+  <a-entity entity-generator="mixin: baseTree; num: 5;"></a-entity>
 
   <a-camera>
     <a-cursor
