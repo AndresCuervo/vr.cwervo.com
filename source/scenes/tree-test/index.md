@@ -5,15 +5,14 @@ title: Example Tree!
 <script src="https://rawgit.com/ngokevin/aframe-animation-component/master/dist/aframe-animation-component.min.js"></script>
 <script src="/a-frame-js/click-component.js"></script>
 <script src="/a-frame-js/specifyPosition.js"></script>
-<script src="/a-frame-js/pseudoFullScreen.js"></script>
-<script src="/a-frame-js/tree-geom.js"></script>
+<!-- <script src="/a-frame-js/tree-geom.js"></script> -->
 
 <!-- Working with .ply models -->
 <script src="https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"></script>
 <!-- Entity generator -->
 <script src="https://unpkg.com/aframe-entity-generator-component@^3.0.0/dist/aframe-entity-generator-component.min.js"></script>
 <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
-  <script src="https://unpkg.com/aframe-layout-component@4.0.1/dist/aframe-layout-component.min.js"></script>
+<script src="https://unpkg.com/aframe-layout-component@4.0.1/dist/aframe-layout-component.min.js"></script>
 
 <a-scene>
     <a-assets>
@@ -35,15 +34,14 @@ title: Example Tree!
         easing: linear;
         from: -90 0 0;
         to: -90 360 0"></a-mixin>
-        <a-entity id="tree-geom" geometry="primitive: example; vertices: 1 1 1, 2 2 2, 3 3 3"></a-entity>
-        <a-entity id="shinyDoughnut" geometry="primitive: example; vertices: 1 1 1, 2 2 2, 3 3 3"></a-entity>
-        <!-- <a-entity id="shinyDoughnut" geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" -->
-        <!-- material="color: #2eafac; roughness: 0; metalness: 1;" -->
-        <!-- animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; -->
-        <!-- dur: 4000;"></a-entity> -->
+        <a-entity id="shinyDoughnut" geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360"
+        material="color: #2eafac; roughness: 0; metalness: 1;"
+        animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0;
+        dur: 4000;"></a-entity>
     </a-assets>
     <!-- Eventaully replace this, maybe with a photo of the Arb? THE ARB getting glitchier  and glitcher, ooooh! -->
-  <a-sky src="https://image.shutterstock.com/z/stock-photo--degree-forest-panorama-107308361.jpg" rotation="0 -130 0"></a-sky>
+  <!-- <a-sky src="https://image.shutterstock.com/z/stock-photo--degree-forest-panorama-107308361.jpg" rotation="0 -130 0"></a-sky> -->
+  <a-sky src="/images/panoramas/manic-night/archway.jpg" rotation="0 -130 0"></a-sky>
 
   <a-entity mixin="cube limeCube" position="-3 0 -3"
   rotation="45 0 0"></a-entity>
