@@ -46,10 +46,10 @@
 <a-scene>
     <a-assets>
         <a-asset-item id="treePly" src="/assets/ply/tree-shelled.bake.ply"></a-asset-item>
-        <a-mixin id="red" material="color: red"></a-mixin>
-        <a-mixin id="blue" material="color: blue"></a-mixin>
+        <a-mixin id="tree-color" material="color: green"></a-mixin>
+        <a-mixin id="bark-color" material="color: #926239"></a-mixin>
         <a-mixin id="cube" geometry="primitive: box"></a-mixin>
-        <img id="lime-green-picture" src="/images/textures/watercolor/lime-green-square.png" />
+        <!-- <img id="lime-green-picture" src="/images/textures/watercolor/lime-green-square.png"> -->
         <a-mixin id="limeCube" geometry="primitive: box" material="src: #lime-green-picture"></a-mixin>
         <a-mixin id="candle" geometry="primitive: sphere" light=""></a-mixin>
         <a-mixin id="baseTree" ply-model="src: #treePly" rotation="-90 0 0" random-spherical-position="radius: 4; startY: 95;" specify-position="" scale="0.05 0.05 0.05"></a-mixin>
@@ -61,12 +61,21 @@
         to: -90 360 0"></a-mixin>
         <a-entity id="shinyDoughnut" geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0;
         dur: 4000;"></a-entity>
+        <!-- <a-entity position="0 3 -4"> -->
+        <a-entity id="conicTree">
+            <a-cone color="green" radius-bottom="2" radius-top="0" height="2" mergeTo="#conicTree">
+                <a-cone mixin="tree-color" radius-bottom="2" radius-top="0" position="0 -1   0" mergeTo="#conicTree"></a-cone>
+                <a-cone mixin="tree-color" radius-bottom="2" radius-top="0" position="0 -1.5 0" mergeTo="#conicTree"></a-cone>
+                <a-cylinder mixin="bark-color" height="1" radius="0.5" position="0 -2.5 0" mergeTo="#conicTree"></a-cylinder>
+            </a-cone>
+        </a-entity>
     </a-assets>
     <!-- Eventaully replace this, maybe with a photo of the Arb? THE ARB getting glitchier  and glitcher, ooooh! -->
   <!-- <a-sky src="https://image.shutterstock.com/z/stock-photo--degree-forest-panorama-107308361.jpg" rotation="0 -130 0"></a-sky> -->
   <a-sky src="/images/panoramas/manic-night/archway.jpg" rotation="0 -130 0"></a-sky>
 
-  <a-entity mixin="cube limeCube" position="-3 0 -3" rotation="45 0 0"></a-entity>
+  <!-- <a-entity mixin="cube limeCube" position="-3 0 -3" -->
+  <!-- rotation="45 0 0"></a-entity> -->
 
 
   <!-- <a-light type="point" position="0 4 -4" -->
@@ -76,12 +85,27 @@
   <!--   </a-entity> -->
   <!-- </a-light> -->
 
-  <a-entity position="0 3 -4">
-    <a-cone color="green" radius-bottom="2" radius-top="0" height="2">
-        <a-cone color="green" radius-bottom="2" radius-top="0" position="0 -1 0"></a-cone>
-        <a-cone color="green" radius-bottom="2" radius-top="0" position="0 -1 0"></a-cone>
-    </a-cone>
+  <!-- <a-entity position="0 3 -4"> -->
+  <!--   <a-cone color="green" radius-bottom="2" radius-top="0" height="2"> -->
+  <!--       <a-cone mixin="tree-color" radius-bottom="2" radius-top="0" position="0 -1   0"></a-cone> -->
+  <!--       <a-cone mixin="tree-color" radius-bottom="2" radius-top="0" position="0 -1.5 0"></a-cone> -->
+  <!--       <a-cylinder mixin="bark-color" height="1" radius="0.5" position="0 -2.5 0"></a-cylinder> -->
+  <!--   </a-cone> -->
+  <!-- </a-entity> -->
+
+
+  <!-- <a-entity mixin="conicTree" position="0 3 -3"></a-entity> -->
+  <a-entity id="conicTree" position="0 3 -4">
+      <a-cone color="green" radius-bottom="2" radius-top="0" height="2" mergeTo="#conicTree">
+          <a-cone mixin="tree-color" radius-bottom="2" radius-top="0" position="0 -1   0" mergeTo="#conicTree"></a-cone>
+          <a-cone mixin="tree-color" radius-bottom="2" radius-top="0" position="0 -1.5 0" mergeTo="#conicTree"></a-cone>
+          <a-cylinder mixin="bark-color" height="1" radius="0.5" position="0 -2.5 0" mergeTo="#conicTree"></a-cylinder>
+      </a-cone>
   </a-entity>
+
+  <!-- <a-entity layout="type: circle; radius: 10"> -->
+  <!--   <a-entity entity-generator="mixin: conicTree; num: 50;"></a-entity> -->
+  <!-- </a-entity> -->
 
 
   <!-- <a-entity layout="type: circle; radius: 10"> -->
