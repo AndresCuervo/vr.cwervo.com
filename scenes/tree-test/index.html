@@ -68,31 +68,48 @@
 
   <a-entity mixin="cube limeCube" position="-3 0 -3" rotation="45 0 0"></a-entity>
 
-  <a-entity layout="type: circle; radius: 10">
-    <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity>
-    <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity>
-    <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity>
-    <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity>
-    <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity>
-    <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity>
-    <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity>
-    <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity>
-    <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity>
-    <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity>
+
+  <!-- <a-light type="point" position="0 4 -4" -->
+  <!-- animation__orbit = "property: rotation; to: 0 360 -4; -->
+  <!-- easing: linear; loop: true; dir: alternate;"> -->
+  <!--   <a-entity mixin="cube limeCube" size> -->
+  <!--   </a-entity> -->
+  <!-- </a-light> -->
+
+  <a-entity position="0 3 -4">
+    <a-cone color="green" radius-bottom="2" radius-top="0" height="2">
+        <a-cone color="green" radius-bottom="2" radius-top="0" position="0 -1 0"></a-cone>
+        <a-cone color="green" radius-bottom="2" radius-top="0" position="0 -1 0"></a-cone>
+    </a-cone>
   </a-entity>
 
-  <a-entity layout="type: circle; radius: 10" position="0 2.5 0" animation__rotate="property: rotation; dur: 10000; easing: linear; loop: true; to: 0 360 0">
-    <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 1500;"></a-entity>
-    <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 0.9;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 2000;"></a-entity>
-    <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 0.8;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 3000;"></a-entity>
-    <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 0.7;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity>
-    <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 0.6;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 5000;"></a-entity>
-    <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 0.5;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 6000;"></a-entity>
-    <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 0.4;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 5000;"></a-entity>
-    <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 0.3;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 6000;"></a-entity>
-    <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 0.2;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 7000;"></a-entity>
-    <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 0.1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 8000;"></a-entity>
-  </a-entity>
+
+  <!-- <a-entity layout="type: circle; radius: 10"> -->
+  <!--   <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity> -->
+  <!--   <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity> -->
+  <!--   <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity> -->
+  <!--   <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity> -->
+  <!--   <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity> -->
+  <!--   <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity> -->
+  <!--   <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity> -->
+  <!--   <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity> -->
+  <!--   <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity> -->
+  <!--   <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity> -->
+  <!-- </a-entity> -->
+  <!--  -->
+  <!-- <a-entity layout="type: circle; radius: 10" position="0 2.5 0" -->
+  <!-- animation__rotate="property: rotation; dur: 10000; easing: linear; loop: true; to: 0 360 0"> -->
+  <!--   <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 1500;"></a-entity> -->
+  <!--   <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 0.9;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 2000;"></a-entity> -->
+  <!--   <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 0.8;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 3000;"></a-entity> -->
+  <!--   <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 0.7;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 4000;"></a-entity> -->
+  <!--   <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 0.6;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 5000;"></a-entity> -->
+  <!--   <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 0.5;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 6000;"></a-entity> -->
+  <!--   <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 0.4;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 5000;"></a-entity> -->
+  <!--   <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 0.3;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 6000;"></a-entity> -->
+  <!--   <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 0.2;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 7000;"></a-entity> -->
+  <!--   <a-entity geometry="primitive: torus; radius: 2; radiusTubular: 0.2; arc: 360" material="color: #2eafac; roughness: 0; metalness: 0.1;" position="0 0 -5" animation__rotate="property: rotation; loop: true; easing: linear; from: 0 0 0; to: 360 0 0; dur: 8000;"></a-entity> -->
+  <!-- </a-entity> -->
 
 
   <!-- <a-entity mixin="tree-geom" position="-3 2 -3" -->
