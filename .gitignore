@@ -16,3 +16,7 @@
 
 # Ignore .DS_store file
 .DS_Store
+
+#Ignore local test images
+/source/images/local-test-images/
+source/panoramas/local-test/
